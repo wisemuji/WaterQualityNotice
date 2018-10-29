@@ -9,16 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAjWDQYysDjO-2YcAn_I1AmCEQeS_2gFdA" />
+
         <activity
             android:name=".MainActivity"
-            android:theme="@style/CustomTitle">
-        <intent-filter>
+            android:theme="@style/CustomTitle"></activity>
+        <activity android:name=".MapActivity"
+            android:theme="@style/MapTitle">
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapActivity" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/title_activity_splash"

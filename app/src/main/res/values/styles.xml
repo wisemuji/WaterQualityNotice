@@ -23,10 +23,18 @@
 
     <style name="CustomTitle" parent="android:Theme">
         <item name="android:windowTitleSize">60dp</item>
-        <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
+        <item name="android:windowTitleBackgroundStyle">@style/CustomTitleBackground</item>
     </style>
 
-    <style name="CustomWindowTitleBackground">
-        <item name="android:background">#ffffff</item>
+    <style name="CustomTitleBackground">
+        <item name="android:background">@color/mainWhite</item>
+    </style>
+
+    <style name="MapTitle" parent="android:Theme">
+        <item name="android:windowTitleSize">60dp</item>
+        <item name="android:windowTitleBackgroundStyle">@style/MapTitleBackground</item>
+    </style>
+    <style name="MapTitleBackground">
+        <item name="android:background">@color/mainPurple</item>
     </style>
 </resources>
