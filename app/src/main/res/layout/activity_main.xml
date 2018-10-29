@@ -1,14 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ededf4"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme.NoActionBar"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="수질 등급"
+        android:textStyle="bold"
+        android:padding="13dp"
+        android:textSize="9pt"
+        android:textColor="#111111"
+
+        />
+
+    <LinearLayout
+        android:background="@drawable/main_btn"
+        android:id="@+id/water_grade_layout"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/water_grade_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/water_grade_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="수질 개선 정보"
+        android:textStyle="bold"
+        android:padding="13dp"
+        android:textSize="9pt"
+        android:textColor="#111111"
+        />
+
+    <LinearLayout
+        android:id="@+id/water_info_layout"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/main_btn"
+            android:id="@+id/water_info_layout_child1"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_height="80dp">
+
+            <ImageView
+                android:id="@+id/water_link_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/water_link_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:background="@drawable/main_btn"
+            android:id="@+id/water_info_layout_child2"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+            <ImageView
+                android:id="@+id/water_phone_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/water_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_layout"
+        android:orientation="horizontal"
+        android:layout_weight="10"
+        android:gravity="bottom"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/main_btn"
+            android:id="@+id/user_location_layout"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_weight="7"
+            android:padding="15dp"
+            android:gravity="center_vertical"
+            android:layout_height="60dp">
+
+            <TextView
+                android:text="소속지역"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/user_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:background="@drawable/main_btn"
+            android:id="@+id/peri_location_layout"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="4"
+            android:padding="15dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:text="정수장위치"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/peri_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 
-
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
