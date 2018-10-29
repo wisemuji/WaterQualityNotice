@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ededf4"
+    android:background="@color/mainBG"
     android:orientation="vertical"
     android:theme="@style/AppTheme.NoActionBar"
     tools:context=".MainActivity">
@@ -14,9 +14,12 @@
         android:layout_height="wrap_content"
         android:text="수질 등급"
         android:textStyle="bold"
-        android:padding="13dp"
-        android:textSize="9pt"
-        android:textColor="#111111"
+        android:paddingLeft="16dp"
+        android:paddingTop="19.7dp"
+        android:paddingBottom="11dp"
+        android:textSize="15sp"
+        android:lineSpacingExtra="-5sp"
+        android:textColor="@color/textBlack"
 
         />
 
@@ -24,10 +27,10 @@
         android:background="@drawable/main_btn"
         android:id="@+id/water_grade_layout"
         android:orientation="horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="118dp">
 
         <ImageView
             android:id="@+id/water_grade_img"
@@ -40,41 +43,66 @@
 
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="수질 개선 정보"
-        android:textStyle="bold"
-        android:padding="13dp"
-        android:textSize="9pt"
-        android:textColor="#111111"
-        />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="수질 개선 정보"
+            android:textStyle="bold"
+            android:paddingLeft="16dp"
+            android:paddingTop="18dp"
+            android:paddingBottom="10.7dp"
+            android:textSize="15sp"
+            android:lineSpacingExtra="-5sp"
+            android:layout_weight="1"
+            android:textColor="@color/textBlack"
+            />
+        <ImageView
+            android:id="@+id/help"
+            android:layout_marginTop="17dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/btn_search"
+            android:layout_marginRight="16.7dp"
+            android:layout_width="17.3dp"
+            android:layout_height="17.3dp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/water_info_layout"
         android:orientation="horizontal"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:background="@drawable/main_btn"
             android:id="@+id/water_info_layout_child1"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:layout_height="80dp">
-
+            android:gravity="center_horizontal"
+            android:layout_height="71.3dp">
             <ImageView
                 android:id="@+id/water_link_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_marginTop="15dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/btn_search"
+                android:layout_width="25.3dp"
+                android:layout_height="25.3dp" />
             <TextView
                 android:id="@+id/water_link_desc"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="8.3sp"
+                android:layout_marginTop="7dp"
+                android:textColor="@color/textBlack2"
+                android:text="www.linklinklinklinklinklinl"/>
 
         </LinearLayout>
 
@@ -82,21 +110,29 @@
         <LinearLayout
             android:background="@drawable/main_btn"
             android:id="@+id/water_info_layout_child2"
-            android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
             android:layout_weight="1"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:layout_width="match_parent"
-            android:layout_height="80dp">
+            android:layout_height="71.3dp">
 
             <ImageView
                 android:id="@+id/water_phone_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_marginTop="15dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/btn_search"
+                android:layout_width="25.3dp"
+                android:layout_height="25.3dp" />
             <TextView
                 android:id="@+id/water_phone_number"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="8.3sp"
+                android:lineSpacingExtra="7.7sp"
+                android:layout_marginTop="7dp"
+                android:textColor="@color/textBlack2"
+                tools:text="www.linklinklinklinklinklinl"/>
 
         </LinearLayout>
 
@@ -107,8 +143,8 @@
         android:orientation="horizontal"
         android:layout_weight="10"
         android:gravity="bottom"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginBottom="17.7dp"
+        android:layout_marginRight="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -116,21 +152,30 @@
             android:background="@drawable/main_btn"
             android:id="@+id/user_location_layout"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_weight="7"
-            android:padding="15dp"
+            android:padding="13dp"
             android:gravity="center_vertical"
-            android:layout_height="60dp">
+            android:layout_height="65dp">
 
             <TextView
                 android:text="소속지역"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="13.3sp"
+                android:textStyle="bold"
+                android:textColor="@color/textBlack"
+                android:lineSpacingExtra="-3.3sp"/>
             <TextView
                 android:id="@+id/user_location"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="11.7sp"
+                android:textColor="@color/textBlack2"
+                android:lineSpacingExtra="-1.7sp"
+                android:text="음오아예"/>
 
         </LinearLayout>
 
@@ -139,21 +184,30 @@
             android:background="@drawable/main_btn"
             android:id="@+id/peri_location_layout"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="8dp"
             android:layout_weight="4"
-            android:padding="15dp"
+            android:padding="13dp"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="65dp">
 
             <TextView
                 android:text="정수장위치"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="13.3sp"
+                android:textColor="@color/textBlack"
+                android:lineSpacingExtra="-3.3sp"/>
             <TextView
                 android:id="@+id/peri_location"
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:textSize="11.7sp"
+                android:textColor="@color/textBlack2"
+                android:lineSpacingExtra="-1.7sp"
+                tools:text="예아" />
 
         </LinearLayout>
 
