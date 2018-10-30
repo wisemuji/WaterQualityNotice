@@ -22,6 +22,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/btn_current"
             android:layout_width="43.3dp"
             android:layout_height="43.3dp"
             android:textSize="10sp"
@@ -31,17 +32,22 @@
             android:background="@drawable/round_button"/>
 
         <EditText
+            android:id="@+id/input_address"
             android:layout_width="match_parent"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
             android:layout_height="43.3dp"
             android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:textSize="11.7sp"
-            android:textColor="@color/mainBG"
-            android:hint="서울시 관악구 관악동 관악리"
-            android:background="@drawable/round_button"/>
+            android:textColor="@color/mainWhite"
+            android:hint="_주소를 입력하세요."
+            android:textColorHint="@color/mainBG"
+            android:background="@drawable/round_background"/>
 
         <RelativeLayout
+            android:id="@+id/btn_search"
             android:gravity="center"
             android:layout_width="43.3dp"
             android:layout_height="43.3dp"
@@ -56,6 +62,80 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/location_layout"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:layout_marginBottom="17.7dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@drawable/main_btn"
+            android:id="@+id/user_location_layout"
+            android:orientation="vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_width="match_parent"
+            android:layout_weight="7"
+            android:padding="13dp"
+            android:gravity="center_vertical"
+            android:layout_height="65dp">
+
+            <TextView
+                android:text="소속지역"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13.3sp"
+                android:textStyle="bold"
+                android:textColor="@color/textBlack"
+                android:lineSpacingExtra="-3.3sp"/>
+            <TextView
+                android:id="@+id/user_location"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="11.7sp"
+                android:textColor="@color/textBlack2"
+                android:lineSpacingExtra="-1.7sp"
+                android:text="음오아예"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:background="@drawable/main_btn"
+            android:id="@+id/peri_location_layout"
+            android:orientation="vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="4"
+            android:padding="13dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
+            <TextView
+                android:text="정수장위치"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13.3sp"
+                android:textColor="@color/textBlack"
+                android:lineSpacingExtra="-3.3sp"/>
+            <TextView
+                android:id="@+id/peri_location"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="11.7sp"
+                android:textColor="@color/textBlack2"
+                android:lineSpacingExtra="-1.7sp"
+                tools:text="예아" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </RelativeLayout>
