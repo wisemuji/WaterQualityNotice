@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,4 +13,49 @@
         android:layout_height="match_parent"
         class="com.google.android.gms.maps.MapFragment" />
 
-</LinearLayout>
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:paddingLeft="20.7dp"
+        android:paddingRight="20.7dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="43.3dp"
+            android:layout_height="43.3dp"
+            android:textSize="10sp"
+            android:textAlignment="center"
+            android:textColor="@color/mainWhite"
+            android:text="현재"
+            android:background="@drawable/round_button"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="43.3dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:textSize="11.7sp"
+            android:textColor="@color/mainBG"
+            android:hint="서울시 관악구 관악동 관악리"
+            android:background="@drawable/round_button"/>
+
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="43.3dp"
+            android:layout_height="43.3dp"
+            android:background="@drawable/round_button">
+            <ImageView
+                android:layout_width="13.7dp"
+                android:layout_height="13.7dp"
+                android:background="@drawable/btn_search"
+                android:adjustViewBounds="true"/>
+            
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

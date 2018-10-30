@@ -6,6 +6,7 @@
     <color name="mainWhite">#ffffff</color>
     <color name="mainBlack">#000000</color>
     <color name="mainPurple">#6d72fe</color>
+    <color name="mainPurpleDark">#4b50dc</color>
     <color name="textBlack">#334d6b</color>
     <color name="textBlack2">#575f68</color>
     <color name="mainBG">#f2f5fa</color>
