@@ -28,6 +28,7 @@
             android:textAlignment="center"
             android:textColor="@color/mainWhite"
             android:text="현재"
+            android:visibility="gone"
             android:background="@drawable/round_button"/>
 
         <LinearLayout
@@ -48,7 +49,6 @@
                 android:layout_centerInParent="true"
                 android:textSize="11.7sp"
                 android:textColor="@color/mainWhite"
-                android:hint="_주소를 입력하세요."
                 android:textColorHint="@color/mainBG"
                 android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
                 />
@@ -59,6 +59,7 @@
             android:gravity="center"
             android:layout_width="43.3dp"
             android:layout_height="43.3dp"
+            android:visibility="invisible"
             android:background="@drawable/round_button">
             <ImageView
                 android:layout_width="13.7dp"
