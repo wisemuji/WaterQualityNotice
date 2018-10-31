@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.NoActionBar"
     tools:context=".MapActivity">
-
     <fragment
         android:id="@+id/map"
         android:layout_width="match_parent"
@@ -31,7 +30,7 @@
             android:text="현재"
             android:background="@drawable/round_button"/>
 
-        <EditText
+        <LinearLayout
             android:id="@+id/input_address"
             android:layout_width="match_parent"
             android:paddingStart="15dp"
@@ -40,11 +39,20 @@
             android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:textSize="11.7sp"
-            android:textColor="@color/mainWhite"
-            android:hint="_주소를 입력하세요."
-            android:textColorHint="@color/mainBG"
-            android:background="@drawable/round_background"/>
+            android:gravity="center"
+            android:background="@drawable/round_background">
+            <fragment
+                android:id="@+id/place_autocomplete_fragment1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="11.7sp"
+                android:textColor="@color/mainWhite"
+                android:hint="_주소를 입력하세요."
+                android:textColorHint="@color/mainBG"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                />
+        </LinearLayout>
 
         <RelativeLayout
             android:id="@+id/btn_search"
@@ -57,7 +65,7 @@
                 android:layout_height="13.7dp"
                 android:background="@drawable/btn_search"
                 android:adjustViewBounds="true"/>
-            
+
         </RelativeLayout>
 
     </LinearLayout>
