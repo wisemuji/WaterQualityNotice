@@ -148,7 +148,7 @@
                 android:textSize="8.3sp"
                 android:layout_marginTop="7dp"
                 android:textColor="@color/textBlack2"
-                android:text="www.linklinklinklinklinklinl"/>
+                android:text="@string/water_link"/>
 
         </LinearLayout>
 
@@ -178,7 +178,7 @@
                 android:lineSpacingExtra="7.7sp"
                 android:layout_marginTop="7dp"
                 android:textColor="@color/textBlack2"
-                android:text="www.linklinklinklinklinklinl"/>
+                android:text="@string/water_phone"/>
 
         </LinearLayout>
 
