@@ -62,6 +62,7 @@
                     android:layout_height="43dp" />
 
                 <TextView
+                    android:id="@+id/water_grade_name"
                     android:layout_marginTop="8.3dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
