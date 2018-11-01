@@ -76,21 +76,21 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true"
         android:gravity="bottom"
-        android:layout_marginBottom="17.7dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16.7dp"
+        android:layout_marginRight="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:background="@drawable/main_btn"
+            android:background="@drawable/shadow3"
             android:id="@+id/user_location_layout"
             android:orientation="vertical"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_weight="7"
             android:padding="13dp"
             android:gravity="center_vertical"
-            android:layout_height="65dp">
+            android:layout_height="75dp">
 
             <TextView
                 android:text="소속지역"
@@ -114,15 +114,15 @@
 
 
         <LinearLayout
-            android:background="@drawable/main_btn"
+            android:background="@drawable/shadow6"
             android:id="@+id/peri_location_layout"
             android:orientation="vertical"
-            android:layout_marginLeft="8dp"
             android:layout_weight="4"
             android:padding="13dp"
+            android:layout_marginBottom="2dp"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="65dp">
+            android:layout_height="72dp">
 
             <TextView
                 android:text="정수장위치"

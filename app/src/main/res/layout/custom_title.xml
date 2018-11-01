@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="60dp"
+    android:layout_height="70dp"
     android:orientation="horizontal"
     android:gravity="center"
     android:background="@color/mainWhite" >
+
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:gravity="bottom"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="25dp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@drawable/lower_shadow"/>-->
 
     <ImageButton
         android:id="@+id/btn_search"
