@@ -69,7 +69,7 @@
                     android:textColor="@color/waterRankA"
                     android:lineSpacingExtra="4.3sp"
                     android:textStyle="bold"
-                    android:text="@string/water_rank_a"
+                    android:text=""
                     />
 
             </LinearLayout>
