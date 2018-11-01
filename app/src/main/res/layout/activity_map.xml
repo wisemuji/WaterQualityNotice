@@ -25,6 +25,7 @@
         android:paddingBottom="11dp"
         android:paddingLeft="20.7dp"
         android:paddingRight="20.7dp"
+        android:clipToPadding="false"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -128,8 +129,9 @@
             android:id="@+id/peri_location_layout"
             android:orientation="vertical"
             android:layout_weight="4"
-            android:visibility="invisible"
             android:paddingLeft="15dp"
+            android:elevation="5dp"
+            android:clipToPadding="false"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
             android:layout_height="75dp">
@@ -150,7 +152,7 @@
                 android:textSize="11.7sp"
                 android:textColor="@color/textBlack2"
                 android:lineSpacingExtra="-1.7sp"
-                tools:text="예아" />
+                android:text="예아" />
 
         </LinearLayout>
 
