@@ -221,6 +221,7 @@ public class MapActivity extends Activity
 
                 Log.d( TAG, "onMyLocationButtonClick : 위치에 따른 카메라 이동 활성화");
                 mMoveMapByAPI = true;
+                isCheckingMove = true;
                 return true;
             }
         });

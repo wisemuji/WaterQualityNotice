@@ -6,11 +6,19 @@
     android:layout_height="match_parent"
     android:theme="@style/AppTheme.NoActionBar"
     tools:context=".MapActivity">
+
     <fragment
         android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="com.google.android.gms.maps.MapFragment" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/lower_shadow"/>
 
     <LinearLayout
         android:paddingTop="10dp"
@@ -41,15 +49,15 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:gravity="center"
+            android:textSize="11.7sp"
+            android:textColor="@color/mainWhite"
+            android:textColorHint="@color/mainBG"
             android:background="@drawable/round_background">
             <fragment
                 android:id="@+id/place_autocomplete_fragment1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:textSize="11.7sp"
-                android:textColor="@color/mainWhite"
-                android:textColorHint="@color/mainBG"
                 android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
                 />
         </LinearLayout>
@@ -77,7 +85,7 @@
         android:layout_alignParentBottom="true"
         android:gravity="bottom"
         android:layout_marginBottom="16.7dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -85,10 +93,10 @@
             android:background="@drawable/shadow3"
             android:id="@+id/user_location_layout"
             android:orientation="vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="8dp"
             android:layout_width="match_parent"
             android:layout_weight="7"
-            android:padding="13dp"
+            android:paddingLeft="15dp"
             android:gravity="center_vertical"
             android:layout_height="75dp">
 
@@ -114,15 +122,14 @@
 
 
         <LinearLayout
-            android:background="@drawable/shadow6"
+            android:background="@drawable/shadow4"
             android:id="@+id/peri_location_layout"
             android:orientation="vertical"
             android:layout_weight="4"
-            android:padding="13dp"
-            android:layout_marginBottom="2dp"
+            android:paddingLeft="15dp"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="72dp">
+            android:layout_height="75dp">
 
             <TextView
                 android:text="정수장위치"
