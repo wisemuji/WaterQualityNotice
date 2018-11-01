@@ -119,6 +119,7 @@ public class MapActivity extends Activity
                 .addOnConnectionFailedListener(this)
                 .addApi(LocationServices.API)
                 .build();
+        Toast.makeText(getApplicationContext(), "위치 정보를 가져오는 중입니다.", Toast.LENGTH_LONG).show();
 
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
                 getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment1);
@@ -214,7 +215,7 @@ public class MapActivity extends Activity
         //지도의 초기위치를 서울로 이동
         setDefaultLocation();
 
-        //mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
+        mGoogleMap.getUiSettings().setZoomControlsEnabled(false);
         mGoogleMap.getUiSettings().setMyLocationButtonEnabled(true);
         mGoogleMap.animateCamera(CameraUpdateFactory.zoomTo(15));
         //나침반이 나타나도록 설정
@@ -445,15 +446,11 @@ public class MapActivity extends Activity
 
         currentMarker = mGoogleMap.addMarker(markerOptions);
 
-
-        if ( mMoveMapByAPI ) {
-
-            Log.d( TAG, "setCurrentLocation :  mGoogleMap moveCamera "
-                    + location.getLatitude() + " " + location.getLongitude() ) ;
-            // CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(currentLatLng, 15);
-            CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(currentLatLng);
-            mGoogleMap.moveCamera(cameraUpdate);
-        }
+        Log.d( TAG, "setCurrentLocation :  mGoogleMap moveCamera "
+                + location.getLatitude() + " " + location.getLongitude() ) ;
+        // CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(currentLatLng, 15);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(currentLatLng);
+        mGoogleMap.moveCamera(cameraUpdate);
     }
 
 

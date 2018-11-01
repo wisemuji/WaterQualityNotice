@@ -21,8 +21,8 @@
         android:background="@drawable/lower_shadow"/>
 
     <LinearLayout
-        android:paddingTop="11dp"
-        android:paddingBottom="11dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:paddingLeft="20.7dp"
         android:paddingRight="20.7dp"
         android:clipToPadding="false"
@@ -88,71 +88,85 @@
         android:layout_alignParentBottom="true"
         android:gravity="bottom"
         android:layout_marginBottom="16.7dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:background="@drawable/shadow5"
-            android:id="@+id/user_location_layout"
-            android:orientation="vertical"
-            android:layout_marginLeft="8dp"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="7"
-            android:paddingLeft="15dp"
-            android:gravity="center_vertical"
-            android:layout_height="75dp">
-
-            <TextView
-                android:text="소속지역"
+            android:padding="5dp"
+            android:clipToPadding="false">
+            <LinearLayout
+                android:background="@drawable/main_btn"
+                android:id="@+id/user_location_layout"
+                android:orientation="vertical"
+                android:layout_marginLeft="8dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="13.3sp"
-                android:textStyle="bold"
-                android:textColor="@color/textBlack"
-                android:lineSpacingExtra="-3.3sp"/>
-            <TextView
-                android:id="@+id/user_location"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="11.7sp"
-                android:textColor="@color/textBlack2"
-                android:lineSpacingExtra="-1.7sp"
-                android:text="음오아예"/>
+                android:elevation="3dp"
+                android:paddingLeft="15dp"
+                android:gravity="center_vertical"
+                android:layout_height="64dp">
 
+                <TextView
+                    android:text="소속지역"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13.3sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/textBlack"
+                    android:lineSpacingExtra="-3.3sp"/>
+                <TextView
+                    android:id="@+id/user_location"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="11.7sp"
+                    android:textColor="@color/textBlack2"
+                    android:lineSpacingExtra="-1.7sp"
+                    android:text="음오아예"/>
+
+            </LinearLayout>
         </LinearLayout>
 
-
         <LinearLayout
-            android:background="@drawable/shadow6"
-            android:id="@+id/peri_location_layout"
-            android:orientation="vertical"
-            android:layout_weight="4"
-            android:paddingLeft="15dp"
-            android:elevation="5dp"
-            android:clipToPadding="false"
-            android:gravity="center_vertical"
             android:layout_width="match_parent"
-            android:layout_height="75dp">
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_weight="4"
+            android:clipToPadding="false">
+            <LinearLayout
+                android:background="@drawable/main_btn"
+                android:id="@+id/peri_location_layout"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:elevation="3dp"
+                android:clipToPadding="false"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="64dp">
 
-            <TextView
-                android:text="정수장위치"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="13.3sp"
-                android:textColor="@color/textBlack"
-                android:lineSpacingExtra="-3.3sp"/>
-            <TextView
-                android:id="@+id/peri_location"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="11.7sp"
-                android:textColor="@color/textBlack2"
-                android:lineSpacingExtra="-1.7sp"
-                android:text="예아" />
+                <TextView
+                    android:text="정수장위치"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="13.3sp"
+                    android:textColor="@color/textBlack"
+                    android:lineSpacingExtra="-3.3sp"/>
+                <TextView
+                    android:id="@+id/peri_location"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="11.7sp"
+                    android:textColor="@color/textBlack2"
+                    android:lineSpacingExtra="-1.7sp"
+                    android:text="예아" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
