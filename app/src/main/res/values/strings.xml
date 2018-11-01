@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">수질알림e</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="water_rank_a">쾌적해요!</string>
+    <string name="water_rank_a_desc">어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니다 어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니다 어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니68717c68717c다 68717c68717c68717c</string>
+    <string name="water_rank_b">괜찮아요!</string>
+    <string name="water_rank_b_desc">어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니다 어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니다 어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니68717c68717c다 68717c68717c68717c</string>
+    <string name="water_rank_c">위험해요!</string>
+    <string name="water_rank_c_desc">어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니다 어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니다 어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니68717c68717c다 68717c68717c68717c</string>
 </resources>

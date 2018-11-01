@@ -10,4 +10,7 @@
     <color name="textBlack">#334d6b</color>
     <color name="textBlack2">#575f68</color>
     <color name="mainBG">#f2f5fa</color>
+    <color name="waterRankA">#6d72fe</color>
+    <color name="waterRankB">#fea06d</color>
+    <color name="waterRankC">#fed76d</color>
 </resources>
