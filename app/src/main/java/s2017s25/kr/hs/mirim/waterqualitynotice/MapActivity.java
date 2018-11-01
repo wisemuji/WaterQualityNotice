@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -65,6 +66,8 @@ public class MapActivity extends Activity
     LinearLayout inputAddress;
     Button btnCurrent;
     RelativeLayout btnSearch;
+    TextView userLocation;
+    TextView periLocation;
 
     private GoogleApiClient mGoogleApiClient = null;
     private GoogleMap mGoogleMap = null;
@@ -108,6 +111,8 @@ public class MapActivity extends Activity
         inputAddress=findViewById(R.id.input_address);
         btnCurrent=findViewById(R.id.btn_current);
         btnSearch=findViewById(R.id.btn_search);
+        userLocation = findViewById(R.id.user_location);
+        periLocation = findViewById(R.id.peri_location);
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -127,9 +132,9 @@ public class MapActivity extends Activity
                 Location location = new Location("");
                 location.setLatitude(place.getLatLng().latitude);
                 location.setLongitude(place.getLatLng().longitude);
-                isCheckingMove = false;
 
                 setCurrentLocation(location, place.getName().toString(), place.getAddress().toString());
+                isCheckingMove = false;
             }
 
             @Override
@@ -263,9 +268,7 @@ public class MapActivity extends Activity
     @Override
     public void onLocationChanged(Location location) {
 
-        currentPosition
-                = new LatLng( location.getLatitude(), location.getLongitude());
-
+        currentPosition = new LatLng( location.getLatitude(), location.getLongitude());
 
         Log.d(TAG, "onLocationChanged : ");
 
@@ -274,7 +277,8 @@ public class MapActivity extends Activity
                 + " 경도:" + String.valueOf(location.getLongitude());
 
         //현재 위치에 마커 생성하고 이동
-        setCurrentLocation(location, markerTitle, markerSnippet);
+        if(isCheckingMove)
+            setCurrentLocation(location, markerTitle, markerSnippet);
 
         mCurrentLocatiion = location;
     }
@@ -424,7 +428,6 @@ public class MapActivity extends Activity
 
 
     public void setCurrentLocation(Location location, String markerTitle, String markerSnippet) {
-
         mMoveMapByUser = false;
 
 

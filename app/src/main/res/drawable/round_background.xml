@@ -7,7 +7,7 @@
                 android:bottom="4dp"
                 android:left="8dp"
                 android:right="8dp" android:top="4dp" />
-            <solid android:color="@color/mainPurple" />
+            <solid android:color="@color/mainWhite" />
             <corners
                 android:bottomLeftRadius="500dp"
                 android:bottomRightRadius="500dp"

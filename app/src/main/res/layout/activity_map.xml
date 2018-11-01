@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         class="com.google.android.gms.maps.MapFragment" />
-    <LinearLayout
+    <TextView
         android:orientation="vertical"
         android:gravity="bottom"
         android:layout_width="match_parent"
@@ -21,7 +21,8 @@
         android:background="@drawable/lower_shadow"/>
 
     <LinearLayout
-        android:paddingTop="10dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
         android:paddingLeft="20.7dp"
         android:paddingRight="20.7dp"
         android:gravity="center"
@@ -42,14 +43,15 @@
         <LinearLayout
             android:id="@+id/input_address"
             android:layout_width="match_parent"
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
+            android:paddingStart="3dp"
+            android:paddingEnd="5dp"
             android:layout_height="43.3dp"
             android:layout_weight="1"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:gravity="center"
             android:textSize="11.7sp"
+            android:elevation="5dp"
             android:textColor="@color/mainWhite"
             android:textColorHint="@color/mainBG"
             android:background="@drawable/round_background">
@@ -90,7 +92,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:background="@drawable/shadow3"
+            android:background="@drawable/shadow5"
             android:id="@+id/user_location_layout"
             android:orientation="vertical"
             android:layout_marginLeft="8dp"
@@ -122,10 +124,11 @@
 
 
         <LinearLayout
-            android:background="@drawable/shadow4"
+            android:background="@drawable/shadow6"
             android:id="@+id/peri_location_layout"
             android:orientation="vertical"
             android:layout_weight="4"
+            android:visibility="invisible"
             android:paddingLeft="15dp"
             android:gravity="center_vertical"
             android:layout_width="match_parent"
