@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:text="사랑시 고백구 행복동 그대를 마나리"
+            android:text="@string/address"
             android:textSize="11.7sp"
             android:textColor="@color/textBlack"
             android:letterSpacing="0.02"
