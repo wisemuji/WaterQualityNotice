@@ -126,7 +126,7 @@
 
         <LinearLayout
             android:background="@drawable/shadow2"
-            android:id="@+id/water_info_layout_child1"
+            android:id="@+id/water_info_layout_link"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_weight="1"
@@ -154,7 +154,7 @@
 
         <LinearLayout
             android:background="@drawable/shadow2"
-            android:id="@+id/water_info_layout_child2"
+            android:id="@+id/water_info_layout_phone"
             android:orientation="vertical"
             android:layout_weight="1"
             android:paddingTop="8dp"

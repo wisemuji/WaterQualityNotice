@@ -27,6 +27,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,10 @@ public class MainActivity extends Activity {
     ImageView waterGradeImg;
     TextView waterGradeName;
     TextView waterGradeDesc;
+    TextView waterLinkDesc;
+    TextView waterPhoneDesc;
+    LinearLayout linkLayout;
+    LinearLayout phoneLayout;
     String waterGrade = "B";
     private String locationProvider = null;
     private Location lastKnownLocation = null;
@@ -66,9 +71,14 @@ public class MainActivity extends Activity {
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.custom_title);
 
         btnSearch = findViewById(R.id.btn_search);
+        tvSearch = findViewById(R.id.tv_search);
         waterGradeDesc = findViewById(R.id.water_grade_desc);
         waterGradeName = findViewById(R.id.water_grade_name);
         waterGradeImg = findViewById(R.id.water_grade_img);
+        waterLinkDesc = findViewById(R.id.water_link_desc);
+        waterPhoneDesc = findViewById(R.id.water_phone_number);
+        linkLayout = findViewById(R.id.water_info_layout_link);
+        phoneLayout = findViewById(R.id.water_info_layout_phone);
         addressTxt = findViewById(R.id.txt_address);
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,10 +94,22 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         });
+        linkLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(waterLinkDesc.getText().toString()));
+                startActivity(intent);
+            }
+        });
+        phoneLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(waterPhoneDesc.getText().toString()));
+//                startActivity(intent);
+            }
+        });
         checkPermissions();
         Toast.makeText(getApplicationContext(), "현재 위치 데이터를 불러오는 중입니다.", Toast.LENGTH_LONG).show();
-
-        locationProvider = ("GPS").toLowerCase();
 
 
     }
@@ -214,6 +236,7 @@ public class MainActivity extends Activity {
             showDialogForPermissionSetting("퍼미션 거부 + Don't ask again(다시 묻지 않음) " +
                     "체크 박스를 설정한 경우로 설정에서 퍼미션 허가해야합니다.");
         } else if (hasFineLocationPermission == PackageManager.PERMISSION_GRANTED) {
+            locationProvider = ("GPS").toLowerCase();
             // Update location to get.
             LocationManager lm = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             lm.removeUpdates(locationListener);    // Stop the update if it is in progress.
