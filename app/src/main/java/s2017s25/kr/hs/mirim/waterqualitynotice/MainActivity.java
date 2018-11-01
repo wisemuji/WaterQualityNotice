@@ -40,6 +40,7 @@ import static android.content.ContentValues.TAG;
 
 public class MainActivity extends Activity {
     ImageButton btnSearch;
+    TextView tvSearch;
     ImageView waterGradeImg;
     TextView waterGradeName;
     TextView waterGradeDesc;
@@ -70,6 +71,13 @@ public class MainActivity extends Activity {
         waterGradeImg = findViewById(R.id.water_grade_img);
         addressTxt = findViewById(R.id.txt_address);
         btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MainActivity.this,MapActivity.class);
+                startActivity(intent);
+            }
+        });
+        tvSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,MapActivity.class);
@@ -220,6 +228,7 @@ public class MainActivity extends Activity {
                 return;
             }
             lm.requestLocationUpdates(locationProvider, 0, 0, locationListener);
+
             waterGradeSetting(waterGrade);
         }
     }

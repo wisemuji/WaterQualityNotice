@@ -3,14 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="60dp"
     android:orientation="vertical"
-    android:gravity="center">
-
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="@color/mainWhite" >
+    android:gravity="center"
+    android:background="@color/mainWhite">
+        <TextView
+            android:id="@+id/tv_search"
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
 
         <ImageButton
             android:id="@+id/btn_search"
@@ -23,7 +21,6 @@
             android:layout_marginBottom="18dp"
             android:adjustViewBounds="true"
             android:background="@drawable/research"
-            android:padding="0sp"
             android:scaleType="centerCrop" />
 
         <TextView
@@ -37,7 +34,5 @@
             android:letterSpacing="0.02"
             android:lineSpacingExtra="-1.7sp"
             android:gravity="center"/>
-
-    </RelativeLayout>
 
 </RelativeLayout>
