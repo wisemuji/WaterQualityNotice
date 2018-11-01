@@ -16,7 +16,7 @@
         android:layout_marginTop="21.7dp"
         android:layout_marginBottom="18dp"
         android:adjustViewBounds="true"
-        android:background="@drawable/btn_search"
+        android:background="@drawable/research"
         android:padding="0sp"
         android:scaleType="centerCrop" />
 

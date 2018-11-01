@@ -64,7 +64,7 @@
             <ImageView
                 android:layout_width="13.7dp"
                 android:layout_height="13.7dp"
-                android:background="@drawable/btn_search"
+                android:background="@drawable/search"
                 android:adjustViewBounds="true"/>
 
         </RelativeLayout>
