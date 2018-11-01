@@ -99,7 +99,7 @@
             android:textStyle="bold"
             android:paddingLeft="16dp"
             android:paddingTop="5dp"
-            android:paddingBottom="2.7dp"
+            android:paddingBottom="7.7dp"
             android:textSize="15sp"
             android:lineSpacingExtra="-5sp"
             android:layout_weight="1"
