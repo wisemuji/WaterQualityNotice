@@ -109,8 +109,8 @@ public class MainActivity extends Activity {
 //                startActivity(intent);
             }
         });
-        checkPermissions();
-        Toast.makeText(getApplicationContext(), "현재 위치 데이터를 불러오는 중입니다.", Toast.LENGTH_LONG).show();
+//        checkPermissions();
+//        Toast.makeText(getApplicationContext(), "현재 위치 데이터를 불러오는 중입니다.", Toast.LENGTH_LONG).show();
 
 
     }
