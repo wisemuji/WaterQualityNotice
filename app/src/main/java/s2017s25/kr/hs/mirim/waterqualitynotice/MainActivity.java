@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
     TextView waterPhoneDesc;
     LinearLayout linkLayout;
     LinearLayout phoneLayout;
-    String waterGrade = "B";
+    String waterGrade = "A";
     private String locationProvider = null;
     private Location lastKnownLocation = null;
     private double latitude;
@@ -105,13 +105,15 @@ public class MainActivity extends Activity {
         phoneLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(waterPhoneDesc.getText().toString()));
-//                startActivity(intent);
+                Uri number = Uri.parse("tel:" + waterPhoneDesc.getText().toString());
+                Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
+                startActivity(callIntent);
             }
         });
 //        checkPermissions();
 //        Toast.makeText(getApplicationContext(), "현재 위치 데이터를 불러오는 중입니다.", Toast.LENGTH_LONG).show();
 
+        waterGradeSetting(waterGrade);
 
     }
 
@@ -252,8 +254,6 @@ public class MainActivity extends Activity {
                 return;
             }
             lm.requestLocationUpdates(locationProvider, 0, 0, locationListener);
-
-            waterGradeSetting(waterGrade);
         }
     }
 

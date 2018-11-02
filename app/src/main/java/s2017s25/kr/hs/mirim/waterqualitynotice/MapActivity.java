@@ -93,7 +93,7 @@ public class MapActivity extends Activity
     boolean mMoveMapByUser = true;
     boolean mMoveMapByAPI = true;
     LatLng currentPosition;
-    String selectedAddress = null;
+    String selectedAddress = "";
 
     Place searchedPlace;
     boolean isCheckingMove = true;
@@ -135,6 +135,8 @@ public class MapActivity extends Activity
                     intent.putExtra("address", selectedAddress);
                     setResult(RESULT_OK, intent);
                     finish();
+                } else {
+                    Toast.makeText(getApplicationContext(),"주소를 먼저 선택하세요.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -319,6 +321,7 @@ public class MapActivity extends Activity
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latlng);
         markerOptions.title(title);
+//        markerOptions.icon()
         markerOptions.snippet(desc);
         map.addMarker(markerOptions);
 
@@ -475,7 +478,8 @@ public class MapActivity extends Activity
         mGoogleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                if(!selectedAddress.equals(markerTitle)) {
+                if(!selectedAddress.equals(markerTitle) &&
+                        !markerTitle.equals("위치정보 가져올 수 없음")) {
                     selectedAddress = markerTitle;
                     addressTxt.setText(selectedAddress);
                     Toast.makeText(getApplicationContext(), "위치가 설정되었습니다.", Toast.LENGTH_SHORT).show();
