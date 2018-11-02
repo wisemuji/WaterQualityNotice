@@ -130,7 +130,7 @@ public class MapActivity extends Activity
         checkBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(selectedAddress!=null) {
+                if(selectedAddress != null && !selectedAddress.equals("")) {
                     Intent intent = new Intent();
                     intent.putExtra("address", selectedAddress);
                     setResult(RESULT_OK, intent);
@@ -505,14 +505,22 @@ public class MapActivity extends Activity
 
         mGoogleMap.addPolyline(polylineOptions);
 
+        addMarker("배수지", "서울특별시 서대문구 충현동 398-5", new LatLng(37.559368, 126.962141), mGoogleMap);
         addMarker("정수장", "서울특별시 마포구 아현동 455-23", puriLatLng, mGoogleMap);
 
         currentMarker = mGoogleMap.addMarker(markerOptions);
 
+        if(!selectedAddress.equals(markerTitle) &&
+                !markerTitle.equals("위치정보 가져올 수 없음")) {
+            selectedAddress = markerTitle;
+            addressTxt.setText(selectedAddress);
+            Toast.makeText(getApplicationContext(), "위치가 설정되었습니다.", Toast.LENGTH_SHORT).show();
+        }
+
         Log.d( TAG, "setCurrentLocation :  mGoogleMap moveCamera "
                 + location.getLatitude() + " " + location.getLongitude() ) ;
         // CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(currentLatLng, 15);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(puriLatLng);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(currentLatLng);
         mGoogleMap.moveCamera(cameraUpdate);
     }
 
