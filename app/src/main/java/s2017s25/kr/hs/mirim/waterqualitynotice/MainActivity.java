@@ -73,7 +73,6 @@ public class MainActivity extends Activity {
 
         btnSearch = findViewById(R.id.btn_search);
         tvSearch = findViewById(R.id.tv_search);
-        waterGradeDesc = findViewById(R.id.water_grade_desc);
         waterGradeName = findViewById(R.id.water_grade_name);
         waterGradeImg = findViewById(R.id.water_grade_img);
         waterLinkDesc = findViewById(R.id.water_link_desc);
@@ -141,19 +140,16 @@ public class MainActivity extends Activity {
         switch (waterGrade){
             case "A":
                 waterGradeImg.setImageDrawable(getResources().getDrawable(R.drawable.a, getApplicationContext().getTheme()));
-                waterGradeDesc.setText(R.string.water_rank_a_desc);
                 waterGradeName.setText(R.string.water_rank_a);
                 waterGradeName.setTextColor(getResources().getColor(R.color.waterRankA, getApplicationContext().getTheme()));
                 break;
             case "B":
                 waterGradeImg.setImageDrawable(getResources().getDrawable(R.drawable.b, getApplicationContext().getTheme()));
-                waterGradeDesc.setText(R.string.water_rank_b_desc);
                 waterGradeName.setText(R.string.water_rank_b);
                 waterGradeName.setTextColor(getResources().getColor(R.color.waterRankB, getApplicationContext().getTheme()));
                 break;
             case "C":
                 waterGradeImg.setImageDrawable(getResources().getDrawable(R.drawable.c, getApplicationContext().getTheme()));
-                waterGradeDesc.setText(R.string.water_rank_c_desc);
                 waterGradeName.setText(R.string.water_rank_c);
                 waterGradeName.setTextColor(getResources().getColor(R.color.waterRankC, getApplicationContext().getTheme()));
                 break;
