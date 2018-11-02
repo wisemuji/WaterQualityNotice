@@ -2,7 +2,27 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="60dp"
+    android:background="@color/mainPurple"
     android:orientation="horizontal" >
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:id="@+id/check_tv"
+        android:layout_width="50dp"
+        android:layout_height="match_parent" />
+
+    <ImageButton
+        android:layout_alignParentEnd="true"
+        android:id="@+id/check_btn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="21.7dp"
+        android:layout_marginBottom="18dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/check_button"
+        android:scaleType="centerCrop" />
     <LinearLayout
         android:orientation="vertical"
         android:gravity="bottom"
@@ -13,16 +33,15 @@
     <TextView
         android:id="@+id/txt_address"
         android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:layout_centerInParent="true"
         android:textSize="11.7sp"
         android:textColor="#ffffff"
         android:letterSpacing="0.02"
         android:lineSpacingExtra="-1.7sp"
-        android:background="@color/mainPurple"
         android:textStyle="bold"
-        android:text="수질알림e"
+        android:text="@string/app_name"
         android:gravity="center"/>
 
 </RelativeLayout>

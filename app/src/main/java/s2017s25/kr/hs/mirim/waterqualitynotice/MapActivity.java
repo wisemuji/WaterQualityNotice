@@ -28,6 +28,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -65,9 +66,12 @@ public class MapActivity extends Activity
 
     LinearLayout inputAddress;
     Button btnCurrent;
+    ImageButton checkBtn;
     RelativeLayout btnSearch;
     TextView userLocation;
     TextView periLocation;
+    TextView addressTxt;
+    TextView checkTv;
 
     private GoogleApiClient mGoogleApiClient = null;
     private GoogleMap mGoogleMap = null;
@@ -76,8 +80,8 @@ public class MapActivity extends Activity
     private static final String TAG = "googlemap_example";
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 2002;
-    private static final int UPDATE_INTERVAL_MS = 1000;  // 1초
-    private static final int FASTEST_UPDATE_INTERVAL_MS = 500; // 0.5초
+    private static final int UPDATE_INTERVAL_MS = 2000;  // 2초
+    private static final int FASTEST_UPDATE_INTERVAL_MS = 1000; // 1초
 
     private AppCompatActivity mActivity;
     boolean askPermissionOnceAgain = false;
@@ -86,6 +90,7 @@ public class MapActivity extends Activity
     boolean mMoveMapByUser = true;
     boolean mMoveMapByAPI = true;
     LatLng currentPosition;
+    String selectedAddress = null;
 
     Place searchedPlace;
     boolean isCheckingMove = true;
@@ -113,6 +118,21 @@ public class MapActivity extends Activity
         btnSearch=findViewById(R.id.btn_search);
         userLocation = findViewById(R.id.user_location);
         periLocation = findViewById(R.id.peri_location);
+        addressTxt = findViewById(R.id.txt_address);
+        checkBtn = findViewById(R.id.check_btn);
+        checkTv = findViewById(R.id.check_tv);
+
+        checkBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(selectedAddress!=null) {
+                    Intent intent = new Intent();
+                    intent.putExtra("address", selectedAddress);
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
+            }
+        });
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -145,6 +165,14 @@ public class MapActivity extends Activity
 
 
     }
+
+//    @Override
+//    public void onBackPressed() {
+//        Intent intent = new Intent();
+//        intent.putExtra("address", selectedAddress);
+//        setResult(RESULT_OK, intent);
+//        finish();
+//    }
 
     @Override
     public void onResume() {
@@ -426,7 +454,7 @@ public class MapActivity extends Activity
     }
 
 
-    public void setCurrentLocation(Location location, String markerTitle, String markerSnippet) {
+    public void setCurrentLocation(Location location, final String markerTitle, String markerSnippet) {
         mMoveMapByUser = false;
 
 
@@ -440,7 +468,15 @@ public class MapActivity extends Activity
         markerOptions.title(markerTitle);
         markerOptions.snippet(markerSnippet);
         markerOptions.draggable(true);
-
+        mGoogleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                selectedAddress = markerTitle;
+                addressTxt.setText(selectedAddress);
+                Toast.makeText(getApplicationContext(),"위치가 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
 
         currentMarker = mGoogleMap.addMarker(markerOptions);
 

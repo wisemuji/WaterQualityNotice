@@ -61,6 +61,7 @@ public class MainActivity extends Activity {
     private AppCompatActivity mActivity;
     private static final int GPS_ENABLE_REQUEST_CODE = 2001;
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 2002;
+    private int REQUEST_ADDRESS = 5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,14 +85,14 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,MapActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_ADDRESS);
             }
         });
         tvSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,MapActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_ADDRESS);
             }
         });
         linkLayout.setOnClickListener(new View.OnClickListener() {
@@ -374,17 +375,18 @@ public class MainActivity extends Activity {
         switch (requestCode) {
 
             case GPS_ENABLE_REQUEST_CODE:
-
                 //사용자가 GPS 활성 시켰는지 검사
                 if (checkLocationServicesStatus()) {
                     if (checkLocationServicesStatus()) {
-
                         Log.d(TAG, "onActivityResult : 퍼미션 가지고 있음");
-
                     }
                 }
-
                 break;
+        }
+        switch (resultCode) {
+            case RESULT_OK:
+                address = data.getStringExtra("address");
+                addressTxt.setText(address);
         }
     }
 

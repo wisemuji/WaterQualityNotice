@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">수질알림e</string>
+    <string name="app_name">전국민 수질 알림e</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="water_rank_a">쾌적해요!</string>
     <string name="water_rank_a_desc">어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니다 어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니다 어쩌구 저쩌구 이러쿵 저러쿵 이렇기 때문에 어떠하니까 그렇습니68717c68717c다 68717c68717c68717c</string>
@@ -10,6 +10,6 @@
 
     <string name="water_link">http://www.naver.com</string>
     <string name="water_phone">010-0101-0000</string>
-    <string name="address">위치를 불러오는 중입니다.</string>
+    <string name="address">지도에서 위치를 선택해주세요.</string>
 
 </resources>
