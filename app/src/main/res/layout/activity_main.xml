@@ -39,7 +39,6 @@
         <!--app:cardElevation="5dp">-->
         <LinearLayout
             android:background="@drawable/shadow1"
-            android:id="@+id/water_grade_layout"
             android:orientation="horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -49,6 +48,7 @@
             android:layout_height="255dp">
 
             <LinearLayout
+                android:id="@+id/water_grade_layout"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -73,6 +73,7 @@
                     />
 
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/water_grade_desc_layout"
                 android:layout_width="match_parent"

@@ -47,8 +47,12 @@ public class MainActivity extends Activity {
     TextView waterGradeDesc;
     TextView waterLinkDesc;
     TextView waterPhoneDesc;
+    TextView periLocation;
+    TextView userLocation;
     LinearLayout linkLayout;
     LinearLayout phoneLayout;
+    LinearLayout waterGradeLayout;
+    LinearLayout waterGradeDescLayout;
     String waterGrade = "A";
     private String locationProvider = null;
     private Location lastKnownLocation = null;
@@ -73,13 +77,29 @@ public class MainActivity extends Activity {
 
         btnSearch = findViewById(R.id.btn_search);
         tvSearch = findViewById(R.id.tv_search);
+        periLocation = findViewById(R.id.peri_location);
+        userLocation = findViewById(R.id.user_location);
         waterGradeName = findViewById(R.id.water_grade_name);
         waterGradeImg = findViewById(R.id.water_grade_img);
         waterLinkDesc = findViewById(R.id.water_link_desc);
         waterPhoneDesc = findViewById(R.id.water_phone_number);
         linkLayout = findViewById(R.id.water_info_layout_link);
         phoneLayout = findViewById(R.id.water_info_layout_phone);
+        waterGradeLayout = findViewById(R.id.water_grade_layout);
+        waterGradeDescLayout = findViewById(R.id.water_grade_desc_layout);
         addressTxt = findViewById(R.id.txt_address);
+
+        if(addressTxt.getText().toString().equals("지도에서 위치를 선택해주세요.")){
+            waterGradeLayout.setVisibility(View.INVISIBLE);
+            waterGradeDescLayout.setVisibility(View.INVISIBLE);
+            periLocation.setVisibility(View.INVISIBLE);
+            userLocation.setVisibility(View.INVISIBLE);
+        } else {
+            waterGradeLayout.setVisibility(View.VISIBLE);
+            waterGradeDescLayout.setVisibility(View.VISIBLE);
+            periLocation.setVisibility(View.VISIBLE);
+            userLocation.setVisibility(View.VISIBLE);
+        }
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -383,6 +403,18 @@ public class MainActivity extends Activity {
             case RESULT_OK:
                 address = data.getStringExtra("address");
                 addressTxt.setText(address);
+
+                if(addressTxt.getText().toString().equals("지도에서 위치를 선택해주세요.")){
+                    waterGradeLayout.setVisibility(View.INVISIBLE);
+                    waterGradeDescLayout.setVisibility(View.INVISIBLE);
+                    periLocation.setVisibility(View.INVISIBLE);
+                    userLocation.setVisibility(View.INVISIBLE);
+                } else {
+                    waterGradeLayout.setVisibility(View.VISIBLE);
+                    waterGradeDescLayout.setVisibility(View.VISIBLE);
+                    periLocation.setVisibility(View.VISIBLE);
+                    userLocation.setVisibility(View.VISIBLE);
+                }
         }
     }
 
