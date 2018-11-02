@@ -8,6 +8,7 @@ import android.app.FragmentManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -53,6 +54,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.io.IOException;
 import java.util.List;
@@ -94,6 +97,8 @@ public class MapActivity extends Activity
 
     Place searchedPlace;
     boolean isCheckingMove = true;
+
+    LatLng puriLatLng = new LatLng(37.571743, 126.736380);
 
     LocationRequest locationRequest = new LocationRequest()
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -162,7 +167,6 @@ public class MapActivity extends Activity
                 System.out.println( "An error occurred: " + status);
             }
         });
-
 
     }
 
@@ -477,8 +481,14 @@ public class MapActivity extends Activity
                 return false;
             }
         });
-
-        currentMarker = mGoogleMap.addMarker(markerOptions);
+//        PolylineOptions polylineOptions = new PolylineOptions();
+//        polylineOptions.color(Color.RED);
+//        polylineOptions.width(5);
+//        polylineOptions.add(currentLatLng);
+//        polylineOptions.add(puriLatLng);
+//        mGoogleMap.addPolyline(polylineOptions);
+//
+//        currentMarker = mGoogleMap.addMarker(markerOptions);
 
         Log.d( TAG, "setCurrentLocation :  mGoogleMap moveCamera "
                 + location.getLatitude() + " " + location.getLongitude() ) ;
