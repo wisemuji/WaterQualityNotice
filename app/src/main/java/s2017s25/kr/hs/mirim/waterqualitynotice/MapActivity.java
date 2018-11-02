@@ -98,7 +98,7 @@ public class MapActivity extends Activity
     Place searchedPlace;
     boolean isCheckingMove = true;
 
-    LatLng puriLatLng = new LatLng(37.571743, 126.736380);
+    LatLng puriLatLng = new LatLng(37.551719, 126.953764);
 
     LocationRequest locationRequest = new LocationRequest()
             .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
@@ -314,15 +314,15 @@ public class MapActivity extends Activity
         mCurrentLocatiion = location;
     }
 
-    public void addMarker(String title, String desc, LatLng location, final GoogleMap map){
+    public void addMarker(String title, String desc, LatLng latlng, final GoogleMap map){
 
         MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(location);
+        markerOptions.position(latlng);
         markerOptions.title(title);
         markerOptions.snippet(desc);
         map.addMarker(markerOptions);
 
-        map.moveCamera(CameraUpdateFactory.newLatLng(location));
+        map.moveCamera(CameraUpdateFactory.newLatLng(latlng));
         map.animateCamera(CameraUpdateFactory.zoomTo(10));
 
     }
@@ -475,25 +475,40 @@ public class MapActivity extends Activity
         mGoogleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
-                selectedAddress = markerTitle;
-                addressTxt.setText(selectedAddress);
-                Toast.makeText(getApplicationContext(),"위치가 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                if(!selectedAddress.equals(markerTitle)) {
+                    selectedAddress = markerTitle;
+                    addressTxt.setText(selectedAddress);
+                    Toast.makeText(getApplicationContext(), "위치가 설정되었습니다.", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
                 return false;
             }
         });
-//        PolylineOptions polylineOptions = new PolylineOptions();
-//        polylineOptions.color(Color.RED);
-//        polylineOptions.width(5);
-//        polylineOptions.add(currentLatLng);
-//        polylineOptions.add(puriLatLng);
-//        mGoogleMap.addPolyline(polylineOptions);
-//
-//        currentMarker = mGoogleMap.addMarker(markerOptions);
+        PolylineOptions polylineOptions = new PolylineOptions();
+        polylineOptions.color(Color.RED);
+        polylineOptions.width(10);
+        polylineOptions.add(currentLatLng);
+        polylineOptions.add(new LatLng(37.561648, 126.968093));
+        polylineOptions.add(new LatLng(37.561214, 126.966704));
+        polylineOptions.add(new LatLng(37.560712, 126.966055));
+        polylineOptions.add(new LatLng(37.559334, 126.963793));
+        polylineOptions.add(new LatLng(37.559325, 126.963353));
+        polylineOptions.add(new LatLng(37.559368, 126.962141));
+        polylineOptions.add(new LatLng(37.555999, 126.957960));
+        polylineOptions.add(new LatLng(37.551830, 126.955845));
+        polylineOptions.add(new LatLng(37.551719, 126.953764));
+        polylineOptions.add(puriLatLng);
+
+        mGoogleMap.addPolyline(polylineOptions);
+
+        addMarker("정수장", "서울특별시 마포구 아현동 455-23", puriLatLng, mGoogleMap);
+
+        currentMarker = mGoogleMap.addMarker(markerOptions);
 
         Log.d( TAG, "setCurrentLocation :  mGoogleMap moveCamera "
                 + location.getLatitude() + " " + location.getLongitude() ) ;
         // CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(currentLatLng, 15);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(currentLatLng);
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLng(puriLatLng);
         mGoogleMap.moveCamera(cameraUpdate);
     }
 

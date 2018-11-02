@@ -220,7 +220,7 @@
                 android:textSize="11.7sp"
                 android:textColor="@color/textBlack2"
                 android:lineSpacingExtra="-1.7sp"
-                android:text="음오아예"/>
+                android:text="@string/current_location"/>
 
         </LinearLayout>
 
@@ -251,7 +251,7 @@
                 android:textSize="11.7sp"
                 android:textColor="@color/textBlack2"
                 android:lineSpacingExtra="-1.7sp"
-                android:text="예아" />
+                android:text="@string/puri_location" />
 
         </LinearLayout>
 

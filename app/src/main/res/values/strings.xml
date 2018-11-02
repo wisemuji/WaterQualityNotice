@@ -12,4 +12,7 @@
     <string name="water_phone">010-0101-0000</string>
     <string name="address">지도에서 위치를 선택해주세요.</string>
 
+    <string name="current_location">서울시 중구</string>
+    <string name="puri_location">서울특별시 마포구 아현동 455-23</string>
+
 </resources>
